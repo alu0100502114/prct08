@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'exam/gem/version'
+require 'exam_gem/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "exam-gem"
-  spec.version       = Exam::Gem::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.version       = ExamGem::VERSION
+  spec.authors       = ["alu0100502114, alu0100502107"]
+  spec.email         = ["alu0100502114@ull.edu.es, alu0100502107@ull.edu.es"]
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = ""
