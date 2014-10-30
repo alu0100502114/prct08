@@ -1,7 +1,7 @@
 require "exam_gem/version"
-
-module Exam
-  module Gem
-    # Your code goes here...
-  end
+require 'Question/pregunta'
+require 'Question/Simple_Exam/llist'
+module ExamGem
+  # Your code goes here...
 end
+
