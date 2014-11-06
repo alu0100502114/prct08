@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'exam_gem/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "exam-gem"
+  spec.name          = "exam_gem"
   spec.version       = ExamGem::VERSION
   spec.authors       = ["alu0100502114, alu0100502107"]
   spec.email         = ["alu0100502114@ull.edu.es, alu0100502107@ull.edu.es"]
@@ -18,8 +18,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "bundler", "~> 1.7"
+  spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 2.11"
+
+  spec.add_development_dependency "guard"
+  spec.add_development_dependency "guard-rspec"
+  spec.add_development_dependency "guard-bundler"
 end
 
