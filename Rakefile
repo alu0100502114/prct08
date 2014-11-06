@@ -27,7 +27,7 @@ task :test do
 end
 
 desc 'Ejecutar test con --format html'
-task :thtml do
+task :test_html do
   sh 'rspec spec/examen_spec.rb --format html'
 end
 
