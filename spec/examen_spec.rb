@@ -13,18 +13,23 @@ describe Exam do
     end
     it 'Deben de existir opciones de respuesta' do
       expect(@p1.answers).not_to be_empty
+      expect(@p2.answers).not_to be_empty
     end
     it 'Se debe de invocar a un método para obtener pregunta' do
       expect(@p1.respond_to? :get_question)
+      expect(@p2.respond_to? :get_question)
     end
     it 'Se debe de invocar a un método para obtener respuesta' do
       expect(@p1.respond_to? :get_answer)
+      expect(@p2.respond_to? :get_answer)
     end
     it 'Al menos una respuesta ha de ser la correcta' do
       expect(@p1.num_r != nil)
+      expect(@p2.num_r != nil)
     end
     it 'Se deben de mostrar por consola la pregunta y las respuestas' do
       expect(@p1.respond_to? :to_s)
+      expect(@p2.respond_to? :to_s)
     end                 
     it 'Chequear herencia de clase Question_TF' do
       expect(@p2.is_a? Exam::Question).to eq(true)
