@@ -17,8 +17,8 @@ end
 
 desc 'Ejecutar ficheros Ruby desde directorio "lib"'
 task :bin do
-  sh 'ruby -I. lib/Question/pregunta.rb'
-  sh 'ruby -I. lib/Question/Simple_Exam/llist.rb'
+  sh 'ruby -I. lib/exam_gem/pregunta.rb'
+  sh 'ruby -I. lib/exam_gem/llist.rb'
 end
     
 desc 'Ejecutar test con --format documentation'

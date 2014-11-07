@@ -5,6 +5,7 @@ require 'exam_gem'
 describe Exam do
   before :each do
     @p1 = Exam::Question.new("Es 4 < 2?", ["Si", "No"], 2)
+    @p2 = Exam::Question_TF.new("4 es < 2", 1)
   end
   describe 'Selección simple' do
     it 'Debe de existir una pregunta'do
@@ -24,6 +25,15 @@ describe Exam do
     end
     it 'Se deben de mostrar por consola la pregunta y las respuestas' do
       expect(@p1.respond_to? :to_s)
+    end                 
+    it 'Chequear herencia de clase Question_TF' do
+      expect(@p2.is_a? Exam::Question).to eq(true)
+    end                 
+    it 'Pregunta es una instancia de Question' do
+      expect(@p2).to be_an_instance_of (Exam::Question_TF)
+    end                 
+    it 'Sólo hay 2 respuestas: Verdadero y Falso' do
+      expect(@p2.answers.size == 2  && @p2.answers == ["Verdadero", "Falso"])
     end                 
   end                 
 end # end describe
