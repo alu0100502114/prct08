@@ -4,9 +4,9 @@ require 'exam_gem'
 
 describe Exam do
   before :each do
-    @p1 = Exam::Question.new("Es 4 < 2?", ["Si", "No"], 0, 2)
+    @p1 = Exam::Question.new("Es 4 < 2?", ["Si", "No"], 0, 1)
     @p2 = Exam::Question_TF.new("4 es < 2", 1, 2)
-    @p3 = Exam::Question.new("Es 4 > 2?", ["Si", "No"], 1, 2)
+    @p3 = Exam::Question.new("Es 4 > 2?", ["Si", "No"], 1, 1)
     @p4 = Exam::Question_TF.new("4 es > 2", 1, 4)
   end
   describe 'Selección simple' do
@@ -17,11 +17,11 @@ describe Exam do
       expect(@p1.answers).not_to be_empty
       expect(@p2.answers).not_to be_empty
     end
-    it 'Se debe de invocar a un método para obtener pregunta' do
+    it 'Se debe de invocar a un mÃ©todo para obtener pregunta' do
       expect(@p1.respond_to? :get_question)
       expect(@p2.respond_to? :get_question)
     end
-    it 'Se debe de invocar a un método para obtener respuesta' do
+    it 'Se debe de invocar a un mÃ©todo para obtener respuesta' do
       expect(@p1.respond_to? :get_answer)
       expect(@p2.respond_to? :get_answer)
     end
@@ -42,14 +42,27 @@ describe Exam do
     it 'Sólo hay 2 respuestas: Verdadero y Falso' do
       expect(@p2.answers.size == 2  && @p2.answers == ["Verdadero", "Falso"])
     end
+    it "Comprueba que una pregunta es de menor nivel que otra" do
+      expect(@p1 < @p2).to eq(true)
+    end
+    it "Comprueba que una pregunta es de mismo nivel que otra" do
+      expect(@p1 == @p3).to eq(true)
+    end
+    it "Comprueba que una pregunta es de mayor nivel que otra" do
+      expect(@p4 > @p1).to eq(true)
+    end
+    it "Debe existir un nivel de pregunta y debe estar entre 0 y 5" do
+      expect (@p1.level >= 0 && @p1.level <= 5)
+    end
   end                 
 end # end describe
 
 describe List do
   before :each do 
     @lista = List.new()
-    @lista.ins_start("Nodo s")
-    @lista.ins_final("Nodo f")
+    @lista.ins_start(4)
+    @lista.ins_final(3)
+    @lista.ins_start(2)
   end 
   it 'Se extrae el primer elemento de la lista.' do
     longi = @lista.length
@@ -58,7 +71,7 @@ describe List do
   end 
   it 'Se puede insertar un elemento.' do
     longi = @lista.length
-    @lista.ins_start(1)
+    @lista.ins_start(5)
     expect(@lista.length - 1 == longi)
   end 
   it 'Se pueden insertar varios elementos.' do
@@ -70,7 +83,19 @@ describe List do
   end 
   it 'Debe de exisir una cabeza en la lista.' do
     expect(@lista.head != nil)
-  end 
+  end
+  it "El máximo debe ser 4" do
+    expect(@lista.max == 4).to eq(true)
+  end
+  it "El mínimo debe ser 2" do
+    expect(@lista.min == 2).to eq(true)
+  end
+  it "Comprueba el número de elementos de la lista" do
+    expect(@lista.count).to eq(3)
+  end
+  it "Comprueba que hay un elemento en la lista" do
+    expect(@lista.include?(4)).to eq(true)
+  end
 end # end describe
 
 describe Node do
