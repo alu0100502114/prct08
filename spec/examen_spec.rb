@@ -9,7 +9,7 @@ describe Exam do
     @p3 = Exam::Question.new("Es 4 > 2?", ["Si", "No"], 1, 1)
     @p4 = Exam::Question_TF.new("4 es > 2", 1, 4)
   end
-  describe 'Selección simple' do
+  describe 'Seleccion simple' do
     it 'Debe de existir una pregunta'do
       expect(@p1.question).to eq("Es 4 < 2?")
     end
@@ -17,11 +17,11 @@ describe Exam do
       expect(@p1.answers).not_to be_empty
       expect(@p2.answers).not_to be_empty
     end
-    it 'Se debe de invocar a un mÃ©todo para obtener pregunta' do
+    it 'Se debe de invocar a un metodo para obtener pregunta' do
       expect(@p1.respond_to? :get_question)
       expect(@p2.respond_to? :get_question)
     end
-    it 'Se debe de invocar a un mÃ©todo para obtener respuesta' do
+    it 'Se debe de invocar a un metodo para obtener respuesta' do
       expect(@p1.respond_to? :get_answer)
       expect(@p2.respond_to? :get_answer)
     end
@@ -39,7 +39,7 @@ describe Exam do
     it 'Pregunta es una instancia de Question' do
       expect(@p2).to be_an_instance_of (Exam::Question_TF)
     end                 
-    it 'Sólo hay 2 respuestas: Verdadero y Falso' do
+    it 'Solo hay 2 respuestas: Verdadero y Falso' do
       expect(@p2.answers.size == 2  && @p2.answers == ["Verdadero", "Falso"])
     end
     it "Comprueba que una pregunta es de menor nivel que otra" do
@@ -84,13 +84,13 @@ describe List do
   it 'Debe de exisir una cabeza en la lista.' do
     expect(@lista.head != nil)
   end
-  it "El máximo debe ser 4" do
+  it "El maximo debe ser 4" do
     expect(@lista.max == 4).to eq(true)
   end
-  it "El mínimo debe ser 2" do
+  it "El minimo debe ser 2" do
     expect(@lista.min == 2).to eq(true)
   end
-  it "Comprueba el número de elementos de la lista" do
+  it "Comprueba el numero de elementos de la lista" do
     expect(@lista.count).to eq(3)
   end
   it "Comprueba que hay un elemento en la lista" do
