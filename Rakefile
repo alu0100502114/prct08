@@ -10,7 +10,7 @@ require "bundler/gem_tasks"
 
 task :default => :spec
 
-desc 'Ejecutar códigos de ejemplo de RSpec'
+desc 'Ejecutar codigos de ejemplo de RSpec'
 task :spec do
   sh 'rspec spec/examen_spec.rb'
 end
