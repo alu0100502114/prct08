@@ -1,6 +1,12 @@
 # Exam::Gem
 
-TODO: Write a gem description
+Desarrollo enfocado a pruebas (TDD)
+prct06: Programación OO
+prct07: + Herencia
+prct08: Enumeraciones
+
+. Jesús Marín
+. Vanessa Marín
 
 ## Installation
 

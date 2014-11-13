@@ -4,8 +4,10 @@ require 'exam_gem'
 
 describe Exam do
   before :each do
-    @p1 = Exam::Question.new("Es 4 < 2?", ["Si", "No"], 2)
-    @p2 = Exam::Question_TF.new("4 es < 2", 1)
+    @p1 = Exam::Question.new("Es 4 < 2?", ["Si", "No"], 0, 2)
+    @p2 = Exam::Question_TF.new("4 es < 2", 1, 2)
+    @p3 = Exam::Question.new("Es 4 > 2?", ["Si", "No"], 1, 2)
+    @p4 = Exam::Question_TF.new("4 es > 2", 1, 4)
   end
   describe 'Selección simple' do
     it 'Debe de existir una pregunta'do
@@ -39,7 +41,7 @@ describe Exam do
     end                 
     it 'Sólo hay 2 respuestas: Verdadero y Falso' do
       expect(@p2.answers.size == 2  && @p2.answers == ["Verdadero", "Falso"])
-    end                 
+    end
   end                 
 end # end describe
 
