@@ -1,5 +1,7 @@
 # Exam::Gem
 
+[![Build Status](https://travis-ci.org/alu0100502114/prct08.svg)](https://travis-ci.org/alu0100502114/prct08)
+
 Desarrollo enfocado a pruebas (TDD)
 prct06: Programación OO
 prct07: + Herencia
