@@ -60,4 +60,24 @@ describe Exam do
       p = p.node_sig
     end
   end
+
+  it "Comprueba el numero de elementos de la lista" do
+    expect(@lista.count).to eq(5)
+  end
+
+  it "Comprobar que una pregunta es igual a otra" do
+    p = @lista.head
+    expect(p.node_value == @lista.tail.node_value).to eq(true)
+  end
+
+  it "Comprobar clase Pregunta" do
+    p = @lista.head
+    expect((p.node_value).is_a? Exam::Pregunta).to eq(true)
+  end
+
+  it "Comprueba que una pregunta es de menor nivel que otra" do
+    p = @lista.head
+    expect(p.node_value < p.node_sig.node_value).to eq(true)
+    expect(p.node_sig.node_value < p.node_value).to eq(false)
+  end 
 end # end describe

@@ -100,9 +100,3 @@ module Exam
   end
 
 end
-
-#p = Exam::Question_TF.new(Exam::Question_TF.get_question, Exam::Question_TF.get_right)
-#puts p
-#p = Exam::Question.new(Exam::Question.get_question, Exam::Question.get_answers, Exam::Question.get_right)
-#puts "-----"
-#puts p

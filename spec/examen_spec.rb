@@ -9,10 +9,15 @@ describe Exam do
     @p2 = Exam::Question_TF.new("4 es < 2", 1, 2)
     @p3 = Exam::Question.new("Es 4 > 2?", ["Si", "No"], 1, 1)
     @p4 = Exam::Question_TF.new("4 es > 2", 1, 4)
+    @p5 = Exam::Question.new("Es 4 < 2?", ["Si", "No"], 0, 1)
   end
   describe 'Seleccion simple' do
     it 'Debe de existir una pregunta'do
       expect(@p1.question).to eq("Es 4 < 2?")
+    end
+    it 'Deben de existir pregunta' do
+      expect(@p1.question).not_to be_empty
+      expect(@p2.question).not_to be_empty
     end
     it 'Deben de existir opciones de respuesta' do
       expect(@p1.answers).not_to be_empty
