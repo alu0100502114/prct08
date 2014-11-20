@@ -19,6 +19,7 @@ desc 'Ejecutar ficheros Ruby desde directorio "lib"'
 task :bin do
   sh 'ruby -I. lib/exam_gem/pregunta.rb'
   sh 'ruby -I. lib/exam_gem/llist.rb'
+  sh 'ruby -I. lib/exam_gem/test.rb'
 end
     
 desc 'Ejecutar test con --format documentation'
@@ -34,4 +35,9 @@ end
 desc 'Ejecutar tests de lista enlazada'
 task :list do
   sh 'rspec spec/llist_spec.rb'
+end
+
+desc 'Ejecutar tests de prueba Test'
+task :list do
+  sh 'rspec spec/test_spec.rb'
 end
