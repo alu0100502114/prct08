@@ -8,6 +8,10 @@ module Exam
       @level <=> anOther.level
     end
 
+    def == (anOther)
+      @level == anOther.level && @question == anOther.question
+    end
+
     def self.get_level
       print "Digite dificultad en la pregunta, 0 menor a 10 mayor"
       @level = gets.chomp.to_i
