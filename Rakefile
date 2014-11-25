@@ -17,9 +17,14 @@ end
 
 desc 'Ejecutar ficheros Ruby desde directorio "lib"'
 task :bin do
-  sh 'ruby -I. lib/exam_gem/pregunta.rb'
-  sh 'ruby -I. lib/exam_gem/llist.rb'
+#  sh 'ruby -I. lib/exam_gem/pregunta.rb'
+#  sh 'ruby -I. lib/exam_gem/llist.rb'
   sh 'ruby -I. lib/exam_gem/test.rb'
+end
+
+desc "Genera documentacion"
+task :rdoc do
+  sh 'rdoc --exclude Gemfile --exclude Guardfile --exclude Rakefile --exclude rspec_*'
 end
     
 desc 'Ejecutar test con --format documentation'
@@ -38,6 +43,6 @@ task :list do
 end
 
 desc 'Ejecutar tests de prueba Test'
-task :list do
+task :test do
   sh 'rspec spec/test_spec.rb'
 end

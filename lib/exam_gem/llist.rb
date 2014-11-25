@@ -49,16 +49,13 @@ class List
   include Enumerable
 
   def each
-   #  while @head != nil
-   #    yield @head.node_value
-   #    @head = @head.node_sig
-   #  end  
     n = @head
     while n != nil
       yield n.node_value
       n = n.node_sig
     end
   end
+
   # Constructor de la clase
   def initialize
     @head = nil

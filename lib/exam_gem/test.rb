@@ -3,9 +3,6 @@
 require_relative 'llist'
 require_relative 'pregunta'
 
-WRONG = false
-RIGHT = true
-
 class Test
 
   attr_accessor :name, :questions
@@ -44,8 +41,8 @@ end
 
 class ITest < Test
   def run
-    puts name
-    questions.each do |q|
+    puts @name
+    @questions.each do |q|
       puts q
       print "Tu respuesta: "
       answ = gets.chomp.to_i

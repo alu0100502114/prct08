@@ -86,4 +86,17 @@ describe Test do
   it "Examen suspenso con ganas" do
     expect(@t1.check([1, 1, 2, 1, 1, 0])).to be < 3
   end
+
+  it "Mirar que no haya preguntas iguales" do
+    p1 = @t1.questions.head
+    while p1.node_sig != nil
+      p2 = p1.node_sig
+      while p2 != nil
+        expect(p1.node_value == p2.node_value).to eq(false)
+        p2 = p2.node_sig
+      end
+      p1 = p1.node_sig
+    end
+  end
+
 end

@@ -1,7 +1,6 @@
 #encoding: utf-8
 require 'spec_helper'
 require 'exam_gem'
-#require 'Simple_Question/llist'
 
 describe Exam do
   before :each do
