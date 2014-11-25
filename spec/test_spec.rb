@@ -11,7 +11,7 @@ describe Test do
     @lista.ins_final(Exam::Question.new('Cuál es el tipo del objeto en el siguiente codigo Ruby? class Objeto end', ['Una instancia de la clase Class', 'Una constante', 'Un objeto', 'Ninguna de las anteriores'], 0, 3))
     @lista.ins_final(Exam::Question_VF.new('Es apropiado que una clase Tablero herede de una clase Juego', 0, 4))
     @lista.ins_final(Exam::Question.new('¿Cuál es la salida del siguiente codigo Ruby? class Xyz def pots @nice end end xyz = Xyz.new p xyz.pots', ['#<Xyz:0xa000208>', 'nil', '0', 'Ninguna de las anteriores'], 1, 1))
-    @t1 = Test.new("Examen de Ruby", @lista)
+    @t1 = ITest.new("Examen de Ruby", @lista)
   end
 
   it "Se debe poder realizar por pantalla un examen" do
@@ -73,5 +73,17 @@ describe Test do
   it "Comprueba que una pregunta es de menor nivel que otra" do
     expect(@t1.questions.head.node_value < @t1.questions.head.node_sig.node_value).to eq(true)
     expect(@t1.questions.head.node_sig.node_value < @t1.questions.head.node_value).to eq(false)
+  end
+
+  it "Examen sobresaliente" do
+    expect(@t1.check([1, 0, 2, 0, 0, 1])).to eq(6)
+  end
+
+  it "Examen aprobado justito" do
+    expect(@t1.check([1, 0, 2, 1, 1, 0])).to be >= 3
+  end
+
+  it "Examen suspenso con ganas" do
+    expect(@t1.check([1, 1, 2, 1, 1, 0])).to be < 3
   end
 end

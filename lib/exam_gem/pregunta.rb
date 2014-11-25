@@ -1,3 +1,4 @@
+require "version"
 module Exam
   # Your code goes here...
   class Question
