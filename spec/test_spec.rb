@@ -12,6 +12,8 @@ describe Test do
     @lista.ins_final(Exam::Question_VF.new('Es apropiado que una clase Tablero herede de una clase Juego', 0, 4))
     @lista.ins_final(Exam::Question.new('¿Cuál es la salida del siguiente codigo Ruby? class Xyz def pots @nice end end xyz = Xyz.new p xyz.pots', ['#<Xyz:0xa000208>', 'nil', '0', 'Ninguna de las anteriores'], 1, 1))
     @t1 = ITest.new("Examen de Ruby", @lista)
+    @t2 = ITest.new("Examen de Ruby al revés", @lista)
+    @t2.invertir_auto
   end
 
   it "Se debe poder realizar por pantalla un examen" do
@@ -97,6 +99,15 @@ describe Test do
       end
       p1 = p1.node_sig
     end
+  end
+
+  it "Se debe poder invertir el orden de las preguntas" do
+    expect(@t1.respond_to? :invertir)
+  end
+
+  it "Orden de preguntas al revés" do
+    expect(@t1.questions.head == @t2.questions.tail).to eq(true)
+    expect(@t2.questions.head == @t1.questions.tail).to eq(true)
   end
 
 end

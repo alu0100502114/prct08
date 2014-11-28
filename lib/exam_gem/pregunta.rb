@@ -1,18 +1,39 @@
 require "version"
+
+# Modulo Exam
 module Exam
-  # Your code goes here...
+  # Definición de Clase Question
+   # * metodo <=>
+   # * metodo ==
+   # * metodo get_question
+   # * metodo get_level
+   # * metodo get_answers
+   # * metodo get_right
+   # * metodo get_answer
+   # * metodo initiliaze
+   # * metodo to_s
   class Question
+
+    # Atributo answers, para almacenar las respuestas de la pregunta
+    # Atributo question, para almacenar la pregunta en sí
+    # Atributo num_r, numero de la respuesta correcta
+    # Atributo level, nivel de la pregunta
     attr_accessor :answers, :question, :num_r, :level
 
+    # Módulo que permite comparar niveles de preguntas
     include Comparable
+
+    # Compara nivel de 2 preguntas haciendo uso de Comparable
     def <=> (anOther)
       @level <=> anOther.level
     end
 
+    # Compara si una pregunta es igual a otra
     def == (anOther)
       @level == anOther.level && @question == anOther.question
     end
 
+    # Obtener nivel de pregunta
     def self.get_level
       print "Digite dificultad en la pregunta, 0 menor a 10 mayor"
       @level = gets.chomp.to_i
@@ -66,6 +87,18 @@ module Exam
       out
     end
 
+    #x Revisar
+    def inv(list, i)
+        list[list.size-1-i]
+    end
+
+    #x Revisar
+    def inverse(list)
+        output = list.map.with_index do |x,i|
+            inv(list, i)
+        end
+    end
+
     # Constructor de la clase
     def initialize(question = get_question, answers = get_answers, num_r = get_right, level = get_level)
       raise ArgumentError,
@@ -82,6 +115,10 @@ module Exam
   end
 
   # Clase para representar la clase de preguntas de Verdadero y Falso
+  # Definición de la clase Question_TF que es hija de Question y que constituye un caso particular de la clase Pregunta para preguntas de Verdadero y Falso.
+  # Hace uso de los metodos de Question además de:
+  # * metodo initialize. Con overriding sobre el de Question
+  # * metodo get_right. Con overriding sobre el de Question
   class Question_TF < Question
  
     # Metodo para inicializar sobrecargando

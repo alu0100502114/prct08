@@ -1,5 +1,15 @@
 # require 'pry'
 
+# === Clase Node
+# Definición de la clase Node que permite almacenar y representar un nodo con un elemento anterior y otor posterior por pantalla mediante los siguientes metodos
+# * metodo initialize
+# * metodo to_s
+# * metodo node_value
+# * metodo node_sig
+# * metodo node_ant
+# * metodo edi_sig
+# * metodo edi_ant
+#
 Node = Struct.new(:value, :sig, :ant) do
   # Constructor de la clase
   def initialize (value, sig, ant)
@@ -43,11 +53,26 @@ Node = Struct.new(:value, :sig, :ant) do
   end
 end
 
+# === Clase List
+# Definición de la clase Lista que permite almacenar, trabajar y representar una lista doblemente enlazada por pantalla mediante los siguientes metodos
+# * metodo each
+# * metodo initialize
+# * metodo ins_start
+# * metodo ins_final
+# * metodo del_start
+# * metodo del_final
+# * metodo to_s
+# * metodo length
+#
 class List
+  # Atributo head para mostrar el inicio de la lista
+  # Atributo tail para mostrar el final de la lista
   attr_accessor :head, :tail
 
+  # Se incluye el módulo enumerable para poder hacer uso de sus métodos
   include Enumerable
 
+  # Para recorrer la lista y hacer uso del módulo enumerable
   def each
     n = @head
     while n != nil
