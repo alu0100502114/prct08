@@ -6,7 +6,8 @@ Desarrollo enfocado a pruebas (TDD)
 prct06: Programación OO
 prct07: + Herencia
 prct08: Enumeraciones
-prct09. Singletons
+prct09: Singletons
+prct10: Funciones de orden superior
 
 . Jesús Marín
 . Vanessa Marín
