@@ -38,12 +38,12 @@ class Test
   def check(answ)
     r = 0
     @questions.each do |q|
-      if q.num_c == answ[r]
+      if q.num_r == answ[r]
         @good += 1
       end
       r +=1
     end
-    @aciertos
+    @good
   end
   
   # Invertir el order de las preguntas sin programación funcional

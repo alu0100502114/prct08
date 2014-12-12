@@ -8,6 +8,7 @@ prct07: + Herencia
 prct08: Enumeraciones
 prct09: Singletons
 prct10: Funciones de orden superior
+prct11: Lenguajes de dominio específico (DSL)
 
 . Jesús Marín
 . Vanessa Marín

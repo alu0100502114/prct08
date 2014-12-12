@@ -8,7 +8,7 @@
 
 require "bundler/gem_tasks"
 
-task :default => :spec
+task :default => :dsl
 
 desc 'Ejecutar codigos de ejemplo de RSpec'
 task :spec do

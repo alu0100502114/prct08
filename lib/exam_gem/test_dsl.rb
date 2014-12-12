@@ -39,14 +39,14 @@ class TestDSL < ITest
   def question(title, answers = {})
     resp = []
     a = 0
-    num_c = 0
+    num_r = 0
     correcta = answers[:right] if answers[:right]
     answers.map do |key,r|
       resp << r
-      num_c = a if r == correcta
+      num_r = a if r == correcta
       a += 1
     end
-    @questions.ins_final(Exam::Question.new(title, resp, num_c, 0))
+    @questions.ins_final(Exam::Question.new(title, resp, num_r, 0))
   end
 
   # Metodo para cargar la respuesta correcta
